@@ -50,7 +50,7 @@ for(const btns of allBtn){
         const total = document.getElementById('totalprice').innerText;
 
        const convertMoney = parseInt(total);
-       document.getElementById('totalprice').innerText = convertMoney + parseInt(500);
+       document.getElementById('totalprice').innerText = convertMoney + parseInt(550);
      
      
 
