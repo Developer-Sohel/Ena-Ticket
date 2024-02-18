@@ -44,7 +44,7 @@ for(const btns of allBtn){
 
         const seatPrice = document.getElementById('seatPrice');
         const h3 = document.createElement('h3');
-        h3.innerHTML = '500'
+        h3.innerHTML = '550'
         seatPrice.appendChild(h3)
 
         const total = document.getElementById('totalprice').innerText;
