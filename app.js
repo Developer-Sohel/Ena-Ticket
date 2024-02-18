@@ -2,22 +2,30 @@
 
 let  count = 40;
 let seatIncrement = 0;
+let allSeatName = '';
 
 const allBtn = document.getElementsByClassName('btn');
 for(const btns of allBtn){
     btns.addEventListener('click', function(e){
-     if(btns>=4){
-        alert('hfghf')
-     }
+    
+        const mSeetName = document.getElementById('seetName');
+        const mSeetNumber =(e.target.innerText);
+
+        if(allSeatName.includes(mSeetNumber))return
+        console.log(mSeetName);
+        console.log(mSeetNumber);
+        
         if(count>0){
             count -- ;
-        }
+        }else{return}
       
      seetInnarText('seetCount' ,count)
     
-     if(seatIncrement<40){
+     if(seatIncrement<4){
         seatIncrement ++;
-     }
+     }else {return}
+
+       allSeatName = allSeatName+mSeetNumber
        seetInnarText('seetIncrement', seatIncrement )
         btns.style.backgroundColor = "green";
      
@@ -67,6 +75,23 @@ nextbtn.addEventListener('click', function(){
 
 })
 // Applu Coupon
+
+const applyCoupon = () => {
+    const total = document.getElementById('totalprice').innerText;
+
+    const convertMoney = parseInt(total);    
+     
+    const couponCode = document.getElementById('coupon').value
+    if(seatIncrement > 3 && couponCode === "Couple 20"){
+        // Todo: Reduce the price here
+        document.getElementById('totalprice').innerText = convertMoney / 100 * 80; 
+    }
+
+    if(seatIncrement > 3 && couponCode === "NEW15"){
+        document.getElementById('totalprice').innerText = convertMoney / 100 * 80;
+    }
+    console.log('clicked');
+}
 
 
 
