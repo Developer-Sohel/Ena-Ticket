@@ -66,15 +66,8 @@ function seetInnarText(id , value){
 
 }
 
-const nextbtn = document.getElementById('nextbtn');
 
-nextbtn.addEventListener('click', function(){
-    const popup = document.getElementById('popup');
-    popup.remove(this.remove)
-
-
-})
-// Applu Coupon
+// Apply Coupon
 
 const applyCoupon = () => {
     const total = document.getElementById('totalprice').innerText;
@@ -83,17 +76,29 @@ const applyCoupon = () => {
      
     const couponCode = document.getElementById('coupon').value
     if(seatIncrement > 3 && couponCode === "Couple 20"){
-        // Todo: Reduce the price here
+    
         document.getElementById('totalprice').innerText = convertMoney / 100 * 80; 
     }
 
     if(seatIncrement > 3 && couponCode === "NEW15"){
-        document.getElementById('totalprice').innerText = convertMoney / 100 * 80;
+        document.getElementById('totalprice').innerText = convertMoney / 100 * 70;
     }
     console.log('clicked');
 }
 
 
 
+// popup
 
 
+const section = document.querySelector("section"),
+  overlay = document.querySelector(".overlay"),
+  showBtn = document.querySelector("#nextbtn"),
+  closeBtn = document.querySelector(".close-btn");
+showBtn.addEventListener("click", () => section.classList.add("active"));
+overlay.addEventListener("click", () =>
+  section.classList.remove("active")
+);
+closeBtn.addEventListener("click", () =>
+  section.classList.remove("active")
+);
